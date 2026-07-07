@@ -1,2 +1,6 @@
 # ignore packages installed by npm
 node_modules
+# ignore backup files (usually they end with a tilde, like meadowlark.js~)
+*~
+# for Mac users
+.DS_Store
