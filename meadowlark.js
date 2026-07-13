@@ -1,16 +1,29 @@
 const express = require('express')
 const { engine } = require('express-handlebars')
 const handlers = require('./lib/handlers')
+const weatherMiddleware = require('./lib/middleware/weather')
 
 const app = express()
 
+// Remove the X-Powered-By header for security reasons
+app.disable('x-powered-by')
+
 //configure Handlebar view engine
 app.engine('handlebars', engine({
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    helpers: {
+        section: function(name, options) {
+            if(!this._sections) this._sections = {}
+            this._sections[name] = options.fn(this)
+            return null
+        }
+    }
 }))
 app.set('view engine', 'handlebars')
 
 const port = process.env.PORT || 3000
+
+app.use(weatherMiddleware)
 
 app.use(express.static(__dirname + '/public'))
 

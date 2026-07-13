@@ -2,11 +2,21 @@
 <html>
     <head>
         <title>Meadowlark Travel</title>
+        {{{_sections.head}}}
     </head>
     <body>
-        <header>
-            <img src="/img/logo.png" alt="Meadowlark Travel Logo">
-        </header>
-        {{{body}}}
+        <div class="container">
+            <header>
+                <div class="container">
+                    <h1>Meadowlark Travel</h1>
+                    <img src="/img/logo.png" alt="Meadowlark Travel Logo">
+                </div>
+            </header>
+            <div class="container">
+                {{{body}}}
+                {{{_sections.scripts}}}
+            </div>
+            <footer>&copy; 2026 Meadowlark Travel.</footer>
+        </div>
     </body>
 </html>
