@@ -4,3 +4,5 @@ node_modules
 *~
 # for Mac users
 .DS_Store
+# ignore credentials files
+.credentials.*.json

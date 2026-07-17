@@ -17,8 +17,10 @@
   "dependencies": {
     "body-parser": "^2.3.0",
     "bootstrap": "^5.3.8",
+    "cookie-parser": "^1.4.7",
     "express": "^5.2.1",
     "express-handlebars": "^9.0.1",
+    "express-session": "^1.19.0",
     "multiparty": "^4.3.0"
   },
   "devDependencies": {
